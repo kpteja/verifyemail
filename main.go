@@ -27,11 +27,11 @@ func main() {
 		fmt.Println("Domain OK")
 	}
 
-	// // Validate user.
-	// err := checkmail.ValidateHost(*email)
-	// if smtpErr, ok := err.(checkmail.SmtpError); ok && err != nil {
-	// 	fmt.Printf("ERROR: Code: %s, Msg: %s\n", smtpErr.Code(), smtpErr)
-	// } else {
-	// 	fmt.Println("User OK")
-	// }
+	// Validate user.
+	err := checkmail.ValidateHost(*email)
+	if smtpErr, ok := err.(checkmail.SmtpError); ok && err != nil {
+		fmt.Printf("ERROR: Code: %s, Msg: %s\n", smtpErr.Code(), smtpErr)
+	} else {
+		fmt.Println("User OK")
+	}
 }
